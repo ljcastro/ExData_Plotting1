@@ -16,13 +16,16 @@ epc$Date <- as.Date(epc$Date,format="%d/%m/%Y")
 #change locale for English weekdays
 Sys.setlocale("LC_TIME","en_US")
 
+#Set the number of plots to draw
+par(mfrow=c(1,1))
+
 #Show the plot on screen
 plot(epc$DateTime,epc$Sub_metering_1,type="n",xlab="",ylab="Energy sub metering")
 lines(epc$DateTime,epc$Sub_metering_1)
 lines(epc$DateTime,epc$Sub_metering_2,col="red")
 lines(epc$DateTime,epc$Sub_metering_3,col="blue")
 legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
-       lty=1,col=c("black","red","blue"))
+       lty=1,col=c("black","red","blue"),cex=0.7)
 
 
 #Create a PNG file with the plot
@@ -32,7 +35,7 @@ lines(epc$DateTime,epc$Sub_metering_1)
 lines(epc$DateTime,epc$Sub_metering_2,col="red")
 lines(epc$DateTime,epc$Sub_metering_3,col="blue")
 legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
-       lty=1,col=c("black","red","blue"))
+       lty=1,col=c("black","red","blue"),cex=0.7)
 
 #Close the device
 dev.off()

@@ -12,6 +12,9 @@ str(epc)
 epc$DateTime <- strptime(paste(epc$Date, epc$Time), format="%d/%m/%Y %H:%M:%S")
 epc$Date <- as.Date(epc$Date,format="%d/%m/%Y")
 
+#Set the number of plots to draw
+par(mfrow=c(1,1))
+
 #plot1
 #Show the plot on screen
 

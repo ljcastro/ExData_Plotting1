@@ -16,6 +16,9 @@ epc$Date <- as.Date(epc$Date,format="%d/%m/%Y")
 #change locale for English weekdays
 Sys.setlocale("LC_TIME","en_US")
 
+#Set the number of plots to draw
+par(mfrow=c(1,1))
+
 #Show the plot on screen
 plot(epc$DateTime,epc$Global_active_power,type="n",xlab="",ylab="Global Active Power (kilowatts)")
 lines(epc$DateTime,epc$Global_active_power)
